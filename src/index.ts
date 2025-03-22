@@ -1,5 +1,7 @@
 class Sorter {
-  constructor(public collection: number[]) {}
+
+  // option1: not good approach as we have to define different way of implementation by argument type
+  constructor(public collection: number[] | string) {}
 
   sort(): void {
     // const length = this.collection.length; same as the one below
@@ -7,11 +9,18 @@ class Sorter {
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const leftHand = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = leftHand;
+
+        // type guards
+        if (this.collection instanceof Array) {
+          if (this.collection[j] > this.collection[j + 1]) {
+            const leftHand = this.collection[j];
+            this.collection[j] = this.collection[j + 1];
+            this.collection[j + 1] = leftHand;
+          }
         }
+
+        if (typeof this.collection === 'string') {}
+
       }
     }
   }
