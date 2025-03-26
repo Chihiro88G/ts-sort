@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const CharactersCollection_1 = require("./CharactersCollection");
 const NewSorter_1 = require("./NewSorter");
 const NumbersCollection_1 = require("./NumbersCollection");
+const LinkedList_1 = require("./LinkedList");
 //   // option1: not good approach as we have to define different way of implementation by argument type
 //   constructor(public collection: number[] | string) {}
 //   sort(): void {
@@ -36,3 +37,11 @@ const charactersCollection = new CharactersCollection_1.CharactersCollection('am
 const newSorter2 = new NewSorter_1.NewSorter(charactersCollection);
 newSorter2.sort();
 console.log(charactersCollection.data);
+const linkedList = new LinkedList_1.LinkedList();
+linkedList.add(500);
+linkedList.add(-15);
+linkedList.add(-9);
+linkedList.add(7);
+const sorter = new NewSorter_1.NewSorter(linkedList);
+sorter.sort();
+linkedList.print();

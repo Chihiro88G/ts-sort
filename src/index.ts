@@ -3,6 +3,7 @@
 import { CharactersCollection } from "./CharactersCollection";
 import { NewSorter } from "./NewSorter";
 import { NumbersCollection } from "./NumbersCollection";
+import { LinkedList } from "./LinkedList";
 
 //   // option1: not good approach as we have to define different way of implementation by argument type
 //   constructor(public collection: number[] | string) {}
@@ -43,3 +44,13 @@ const charactersCollection = new CharactersCollection('amazing');
 const newSorter2 = new NewSorter(charactersCollection);
 newSorter2.sort();
 console.log(charactersCollection.data);
+
+const linkedList = new LinkedList();
+linkedList.add(500);
+linkedList.add(-15);
+linkedList.add(-9);
+linkedList.add(7);
+
+const sorter = new NewSorter(linkedList);
+sorter.sort();
+linkedList.print();
