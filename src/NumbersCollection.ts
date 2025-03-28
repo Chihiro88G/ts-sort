@@ -1,5 +1,9 @@
-export class NumbersCollection {
-  constructor(public data: number[]) {}
+import { NewSorter } from "./NewSorter";
+
+export class NumbersCollection extends NewSorter {
+  constructor(public data: number[]) {
+    super();
+  }
 
   // don't need to call this as a function from somewhere else by addin 'get'
   get length(): number {

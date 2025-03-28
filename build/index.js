@@ -2,7 +2,6 @@
 // class Sorter {
 Object.defineProperty(exports, "__esModule", { value: true });
 const CharactersCollection_1 = require("./CharactersCollection");
-const NewSorter_1 = require("./NewSorter");
 const NumbersCollection_1 = require("./NumbersCollection");
 const LinkedList_1 = require("./LinkedList");
 //   // option1: not good approach as we have to define different way of implementation by argument type
@@ -29,19 +28,34 @@ const LinkedList_1 = require("./LinkedList");
 // const sorter = new Sorter([10, 3, -5, 0]);
 // sorter.sort();
 // console.log(sorter.collection);
-const numbersCollection = new NumbersCollection_1.NumbersCollection([10, 3, -5, 0]);
-const newSorter = new NewSorter_1.NewSorter(numbersCollection);
-newSorter.sort();
-console.log(numbersCollection.data);
-const charactersCollection = new CharactersCollection_1.CharactersCollection('amazing');
-const newSorter2 = new NewSorter_1.NewSorter(charactersCollection);
-newSorter2.sort();
-console.log(charactersCollection.data);
+// option 2: defined interface for Sorter and utilize it for different collections
+// const numbersCollection = new NumbersCollection([10, 3, -5, 0]);
+// const newSorter = new NewSorter(numbersCollection);
+// newSorter.sort();
+// console.log(numbersCollection.data);
+// const charactersCollection = new CharactersCollection('amazing');
+// const newSorter2 = new NewSorter(charactersCollection);
+// newSorter2.sort();
+// console.log(charactersCollection.data);
+// const linkedList = new LinkedList();
+// linkedList.add(500);
+// linkedList.add(-15);
+// linkedList.add(-9);
+// linkedList.add(7);
+// const sorter = new NewSorter(linkedList);
+// sorter.sort();
+// linkedList.print();
+// option 3: using inheritance and abstract class
+const absSorter = new NumbersCollection_1.NumbersCollection([10, 3, -9, 0]);
+absSorter.sort();
+console.log(absSorter.data);
+const absSorter2 = new CharactersCollection_1.CharactersCollection('amazing');
+absSorter2.sort();
+console.log(absSorter2.data);
 const linkedList = new LinkedList_1.LinkedList();
-linkedList.add(500);
+linkedList.add(501);
 linkedList.add(-15);
 linkedList.add(-9);
 linkedList.add(7);
-const sorter = new NewSorter_1.NewSorter(linkedList);
-sorter.sort();
+linkedList.sort();
 linkedList.print();
